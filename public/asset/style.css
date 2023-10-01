@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+} 
+body{
+    overflow: hidden;
+}
+#vanta-canvas{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+ #document{
+    position: absolute;
+    height: 600px;
+    width: 540px;
+    position: absolute; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.17);
+    border-radius: 15px;
+    color: rgb(180, 180, 180);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+span{
+    color: white;
+    font-size: larger;
+}
+h1{
+    color: white;
+    font-size: 3.5vh;
+}
+#top-document{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#top-document img{
+    height: 200px;
+    width: 200px;
+} 
+#top-document h1{
+    font-size: 8vh;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+}
+#mid-document{
+    margin-left: 40px;
+}
+#mid-document h3{
+    font-size: x-large;
+    margin-bottom: 6px;
+}
+#end-document{
+    font-size: x-large;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.20);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#champ{
+    border: solid 2px rgb(180, 180, 180);;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-size: x-large;
+    width: 170px;
+    padding: 4px;
+}
+#btn{
+    border: solid 2px rgb(180, 180, 180);;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.12);
+    color: rgb(180, 180, 180);
+    font-size: x-large;
+    padding: 4px;
+}
+label{
+    font-size: larger;
+    font-weight: bolder;
+}
+#warning{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+#warning img{
+    width: 150px;
+    height: 150px;
+}
+@media screen and (max-width :600px) {
+    body{
+        overflow: auto;
+    }
+    #document{
+        height: 900px;
+        width: 300px;
+        align-items: center;
+    }
+    #top-document{
+        flex-direction: column;
+    }
+    #end-document{
+        flex-direction: column;
+    }
+}

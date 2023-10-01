@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Météo
+{% endblock %}
+
+{% block body %}
+    <div id="vanta-canvas">
+        <div id="document">
+            {% if meteo.name is defined  %}
+                <div id="top-document">
+                    <img src="https://openweathermap.org/img/wn/{{meteo.weather[0].icon}}@2x.png" alt="iconMeteo"/>
+                    <h1>{{ (meteo.main.temp -273.15)|round }}°C</h1>
+                </div>
+                <div id="mid-document">
+                    <h1>{{meteo.name}}</h1>
+                    <h3>Vent: <span>{{(meteo.wind.speed * 3.6|round)|round }} km/h</span></h3>
+                    <h3>Humidité: <span>{{meteo.main.humidity}} %</span></h3>
+                    <h3>Pression atmosphérique: <span>{{meteo.main.pressure}} hpa</span></h3>
+                </div>
+            {% endif %}
+            {% if message is not empty %}
+                <div id="warning">
+                    <img src="warning.png" alt="warning"/>
+                    <h2>{{ message }}</h2>
+                </div>
+                
+            {% endif %}
+                <div id="end-document">
+                    <form action="" method="post">
+                        <input id="champ" type="text" name="city" placeholder="Ville" required>
+                        <input id="btn" type="submit" value="Changer" name="submit">
+                    </form>
+                </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            <link href="{{ asset('asset/style.css') }}" rel="stylesheet" />
+        {% endblock %}
+
+        
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.157.0/three.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.clouds.min.js"></script>
+            <script type="text/javascript">
+                VANTA.CLOUDS({
+                    el: "#vanta-canvas",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 200.00,
+                    minWidth: 200.00,
+                    backgroundColor: 0xffffff,
+                    skyColor: 0x68b8d7,
+                    cloudColor: 0xadc1de,
+                    cloudShadowColor: 0x183550,
+                    sunColor: 0xff9919,
+                    sunGlareColor: 0xff6633,
+                    sunLightColor: 0xff9933,
+                    speed: 1.6
+                })
+            </script>
+        {% endblock %}
+    </body>
+</html>
